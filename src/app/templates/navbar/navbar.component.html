@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(138, 70, 228, 0.916);">
+    <div class="container-fluid">
+        <i class="material-icons">home</i>
+        <a routerLink="/" class="navbar-brand">Task Manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-label="">
+        </button>
+        <div class="collapse navbar-collapse" id="itensMenu">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                    <a routerLink="/" class="nav-link">Tarefas</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<mat-sidenav-container class="navegacao">
+    <mat-sidenav mode="side" opened>
+        <mat-nav-list>
+            <a routerLink="" mat-list-item>
+                <i class="material-icons">home</i>
+            </a>
+            <a routerLink="/tarefas" mat-list-item>
+                <i class="material-icons">work</i>
+            </a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
