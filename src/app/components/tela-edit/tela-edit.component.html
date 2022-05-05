@@ -1,0 +1,55 @@
+<div class="container" style="display: flex; padding: .2rem;">
+    <div class="col-md-6">
+        <div class="title">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Editando tarefa</h2>
+            </h4>
+        </div>
+        <mat-form-field class="campo-criar">
+            <div class="row g-12">
+                <div class="row-sm-4 tarefa">
+                    <label for="firstName" class="form-label">OS</label>
+                    <input type="text" class="form-control" id="nomeTarefa" [(ngModel)]="tarefas.os" placeholder="" disabled value="">
+                </div>
+                <div class="row-sm-4 tarefa">
+                    <label for="firstName" class="form-label">Nome da tarefa</label>
+                    <input type="text" class="form-control" id="nomeTarefa" [(ngModel)]="tarefas.nomeTarefa" placeholder="" value="" required>
+                    <mat-error>E preciso nomear a tarefa</mat-error>
+                </div>
+                <div class="row-sm-4 tarefa ">
+                    <label for="firstName " class="form-label ">Custo R$</label>
+                    <input type="text" [(ngModel)]="tarefas.custo" class="form-control" id="nomeTarefa " placeholder="Custo " value=" " required>
+                    <mat-error>E preciso nomear a tarefa</mat-error>
+                </div>
+                <div class="row-4 tarefa ">
+                    <label for="lastName " class="form-label ">Data limite</label>
+                    <input data-provide="datepicker">
+                    <input type="text" class="form-control" [(ngModel)]="tarefas.dataLimite" name="custo" id="lastName" placeholder="dataLimite" value="" required>
+                </div>
+                <div class="row-sm-4 tarefa ">
+                    <label for="username " class="form-label ">Ordem Apresentação</label>
+                    <div class="input-group has-validation ">
+                        <input type="text " class="form-control " id="username " placeholder="ordemApresentação " disabled required>
+                    </div>
+                </div>
+            </div>
+        </mat-form-field>
+        <div class="button ">
+            <div>
+                <button type="button " id="criar " class="btn btn-success ">
+                    <span class="criar ">Criar<i class="material-icons ">add_circle_outline</i></span>
+                </button>
+            </div>
+            <div>
+                <button type="button " id="criar " class="btn btn-secondary ">
+                    <span>Cancelar<i class="material-icons ">cancel</i></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 " style="justify-content: end; ">
+        <div>
+            dasd
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+.campo-criar {
+    margin: .5rem;
+    padding: .2rem;
+    border-radius: 4px;
+}
+
+form {
+    margin-top: .3rem;
+}
+
+.button {
+    display: flex;
+    margin: .8rem;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+button .button #criar {
+    text-align: end;
+}

@@ -43,19 +43,12 @@ export class TelaTarefasComponent implements OnInit {
   }
 
   fromCreate() {
-    this.service.create(this.tarefas).subscribe((res => {
-      this.router.navigate(['/tarefas'])
-      this.service.message('Ordem criada !')
-    }), err => {
-      for (let i = 0; i < err.error.errors.length; i++) {
-        this.service.message(err.error.errors[i].message)
-      }
-    })
+      this.router.navigate(['/create'])
   }
 
   delete(): void{
     this.service.delete(this.tarefas.os!).subscribe((res => {
-      this.router.navigate(['/tarefas'])
+      this.router.navigate(['tarefas'])
       this.service.message('Ordem de serviço excluida !')
     }
       ))
