@@ -5,43 +5,51 @@
                 <h2>Editando tarefa</h2>
             </h4>
         </div>
-        <mat-form-field class="campo-criar">
-            <div class="row g-12">
-                <div class="row-sm-4 tarefa">
+        <mat-form-field class=" container campo-criar">
+            <div class="row md-12">
+                <div class="row-md-12 tarefa">
                     <label for="firstName" class="form-label">OS</label>
-                    <input type="text" class="form-control" id="nomeTarefa" [(ngModel)]="tarefas.os" placeholder="" disabled value="">
+                    <input type="text" class="form-control" id="nomeTarefa" [(ngModel)]="tarefas.os" placeholder="{{tarefas.os}}" disabled value="">
                 </div>
-                <div class="row-sm-4 tarefa">
+                <div class="row-md-6 tarefa">
                     <label for="firstName" class="form-label">Nome da tarefa</label>
-                    <input type="text" class="form-control" id="nomeTarefa" [(ngModel)]="tarefas.nomeTarefa" placeholder="" value="" required>
-                    <mat-error>E preciso nomear a tarefa</mat-error>
+                    <input type="text" class="form-control" [formControl]="nomeTarefa" id="nomeTarefa" [(ngModel)]="tarefas.nomeTarefa" placeholder=" {{tarefas.nomeTarefa}} " value="" required>
+                    <mat-error *ngIf="nomeTarefa.invalid">
+                        {{ getMessage() }}
+                    </mat-error>
                 </div>
-                <div class="row-sm-4 tarefa ">
+                <div class="row-md-6 tarefa ">
                     <label for="firstName " class="form-label ">Custo R$</label>
-                    <input type="text" [(ngModel)]="tarefas.custo" class="form-control" id="nomeTarefa " placeholder="Custo " value=" " required>
-                    <mat-error>E preciso nomear a tarefa</mat-error>
+                    <input type="text" class="form-control" [formControl]="custo" id="custo" [(ngModel)]="tarefas.custo" placeholder="{{tarefas.custo}}" value="" required>
+                    <mat-error *ngIf="custo.invalid">
+                        {{ getMessage() }}
+                    </mat-error>
                 </div>
-                <div class="row-4 tarefa ">
+                <div class="row-md-6 tarefa ">
                     <label for="lastName " class="form-label ">Data limite</label>
-                    <input data-provide="datepicker">
-                    <input type="text" class="form-control" [(ngModel)]="tarefas.dataLimite" name="custo" id="lastName" placeholder="dataLimite" value="" required>
+                    <input type="text" class="form-control" [formControl]="dataLimite" name="custo" [(ngModel)]="tarefas.dataLimite" id="datalimite" placeholder="{{tarefas.dataLimite}}" value="" required>
+                    <mat-error *ngIf="dataLimite.invalid">
+                        {{ getMessage() }}
+                    </mat-error>
                 </div>
-                <div class="row-sm-4 tarefa ">
+                <div class="row-md-8">
+                </div>
+                <div class="row-md-6 tarefa ">
                     <label for="username " class="form-label ">Ordem Apresentação</label>
                     <div class="input-group has-validation ">
-                        <input type="text " class="form-control " id="username " placeholder="ordemApresentação " disabled required>
+                        <input type="text" class="form-control" id="username" [(ngModel)]="tarefas.ordemApresentacao" placeholder=" {{tarefas.ordemApresentacao}}" disabled required>
                     </div>
                 </div>
             </div>
         </mat-form-field>
         <div class="button ">
             <div>
-                <button type="button " id="criar " class="btn btn-success ">
-                    <span class="criar ">Criar<i class="material-icons ">add_circle_outline</i></span>
+                <button (click)="update()" [disabled]="getMessage()" type="button" id="criar " class="btn btn-success ">
+                    <span class="criar">Editar<i class="material-icons">create</i></span>
                 </button>
             </div>
             <div>
-                <button type="button " id="criar " class="btn btn-secondary ">
+                <button (click)="cancel()" type="button" id="criar" class="btn btn-secondary ">
                     <span>Cancelar<i class="material-icons ">cancel</i></span>
                 </button>
             </div>

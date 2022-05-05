@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MatDatepickerModule } from '@angular/material/datepicker';
+
+import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,6 +21,7 @@ import { TelaTarefasComponent } from './components/tela-tarefas/tela-tarefas.com
 import { NavbarComponent } from './templates/navbar/navbar.component';
 import { TelaEditComponent } from './components/tela-edit/tela-edit.component';
 import { TelaCriarComponent } from './components/tela-criar/tela-criar.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { TelaCriarComponent } from './components/tela-criar/tela-criar.component
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

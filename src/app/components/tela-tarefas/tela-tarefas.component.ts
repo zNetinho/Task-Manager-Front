@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Tarefas } from 'src/app/model/tarefas.model';
 import { TarefasService } from 'src/app/service/tarefas.service';
 import { environment } from 'src/environments/environment';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-tela-tarefas',
@@ -25,7 +26,6 @@ export class TelaTarefasComponent implements OnInit {
     ordemApresentacao: 0
   }
 
-
   displayedColumns: string[] = ['os', 'nomeTarefa', 'custo', 'dataLimite', 'acoes'];
 
   constructor(private service: TarefasService, private router: Router, private route: ActivatedRoute) { }
@@ -33,6 +33,10 @@ export class TelaTarefasComponent implements OnInit {
   ngOnInit(): void {
     this.findAll();
     this.tarefas.os = this.route.snapshot.paramMap.get('os')!
+  }
+
+  drop(event: CdkDragDrop<object[]>) {
+    moveItemInArray(this.listaTarefas, event.previousIndex, event.currentIndex);
   }
 
   findAll() {

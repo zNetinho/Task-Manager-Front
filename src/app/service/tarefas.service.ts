@@ -20,7 +20,7 @@ export class TarefasService {
     return this.http.get<Tarefas[]>(url)
   }
 
-  findById(os: Number):Observable<Tarefas> {
+  findById(os: String):Observable<Tarefas> {
     const url = `${this.baseUrl}tarefas/${os}`
     return this.http.get<Tarefas>(url)
   }

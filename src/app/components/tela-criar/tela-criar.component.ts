@@ -38,4 +38,21 @@ export class TelaCriarComponent implements OnInit {
       }
     })
   }
+
+  getMessage() {
+    if (this.nomeTarefa.invalid) {
+      return "O campo NOME DA TAREFA deve conter no minimo 3 caracteres"
+    }
+    if (this.custo.invalid) {
+      return "O campo Custo deve conter no minimo 4 caracteres"
+    }
+    if (this.dataLimite.invalid) {
+      return "O campo DATA LIMITE deve conter no minimo UMA DATA"
+    }
+    return false;
+  }
+
+  cancel(): void {
+    this.router.navigate(['tarefas'])
+  }
 }
