@@ -1,4 +1,4 @@
-<div class="container" style="display: flex; padding: .2rem;">
+<div class="container" style="display: flex; padding: .2rem; background: white;">
     <div class="col-md-6">
         <div class="title">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -16,14 +16,14 @@
                 </div>
                 <div class="row-4">
                     <label for="lastName" class="form-label">Custo R$</label>
-                    <input type="text" [formControl]="custo" class="form-control" [(ngModel)]="tarefas.custo" name="custo" id="lastName" placeholder="" value="" required>
+                    <input type="text" [formControl]="custo" class="form-control" [(ngModel)]="tarefas.custo" name="custo" id="lastName" placeholder="Custo R$" value="" required>
                     <mat-error *ngIf="custo.invalid">
                         {{ getMessage() }}
                     </mat-error>
                 </div>
                 <div class="row-4">
                     <label for="username" class="form-label">Data limite</label>
-                    <input type="text" [formControl]="dataLimite" class="form-control" [(ngModel)]="tarefas.dataLimite" id="username" placeholder="" required>
+                    <input type="text" [formControl]="dataLimite" class="form-control" [(ngModel)]="tarefas.dataLimite" id="username" placeholder=" {{ tarefas.dataLimite }} " required>
                     <mat-error *ngIf="dataLimite.invalid">
                         {{ getMessage() }}
                     </mat-error>
@@ -43,9 +43,8 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-4" style="justify-content: end;">
+    <div class="col-6">
         <div>
-            dasd
         </div>
     </div>
 </div>

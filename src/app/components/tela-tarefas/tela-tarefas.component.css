@@ -1,16 +1,15 @@
-.title {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-top: 1rem;
+.wrapper {
+    display: flex;
+    background: rgb(195, 195, 195);
+    background: radial-gradient(circle, rgba(195, 195, 195, 1) 0%, rgba(33, 93, 210, 1) 94%);
 }
 
-.content {
-    width: 100%;
+.lista {
+    display: block;
+    flex-wrap: wrap;
 }
 
-.create {
-    background: rgb(182, 243, 50);
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+.editButton {
+    margin-right: .3rem;
+    margin-bottom: .2rem;
 }

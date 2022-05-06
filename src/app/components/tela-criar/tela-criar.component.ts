@@ -3,6 +3,8 @@ import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Tarefas } from 'src/app/model/tarefas.model';
 import { TarefasService } from 'src/app/service/tarefas.service';
+import { CurrencyPipe } from '@angular/common';
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 @Component({
   selector: 'app-tela-criar',
@@ -26,6 +28,7 @@ export class TelaCriarComponent implements OnInit {
   constructor(private service: TarefasService, private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   fromCreate() {

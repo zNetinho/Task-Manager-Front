@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { CurrencyPipe } from '@angular/common';
 
 
 import { MatDatepickerModule} from '@angular/material/datepicker';
@@ -22,6 +23,9 @@ import { NavbarComponent } from './templates/navbar/navbar.component';
 import { TelaEditComponent } from './components/tela-edit/tela-edit.component';
 import { TelaCriarComponent } from './components/tela-criar/tela-criar.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CusteioPipe } from './shared/pipe/custeio.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -31,6 +35,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NavbarComponent,
     TelaEditComponent,
     TelaCriarComponent
+
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatDatepickerModule,
     DragDropModule
   ],
-  providers: [],
+  providers: [CusteioPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
